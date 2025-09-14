@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { Menu, X, Heart } from 'lucide-react';
@@ -43,11 +44,11 @@ export const Header = () => {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <LanguageSwitcher />
-            <Button variant="outline" className="medical-button">
-              {t('cta.doctor')}
+            <Button variant="outline" className="medical-button" asChild>
+              <Link to="/login">{t('cta.doctor')}</Link>
             </Button>
-            <Button className="medical-button bg-gradient-primary hover:opacity-90">
-              {t('hero.getStarted')}
+            <Button className="medical-button bg-gradient-primary hover:opacity-90" asChild>
+              <Link to="/signup">{t('hero.getStarted')}</Link>
             </Button>
           </div>
 
@@ -79,11 +80,11 @@ export const Header = () => {
                 </a>
               ))}
               <div className="flex flex-col space-y-2 px-4 pt-4">
-                <Button variant="outline" className="medical-button">
-                  {t('cta.doctor')}
+                <Button variant="outline" className="medical-button" asChild>
+                  <Link to="/login">{t('cta.doctor')}</Link>
                 </Button>
-                <Button className="medical-button bg-gradient-primary hover:opacity-90">
-                  {t('hero.getStarted')}
+                <Button className="medical-button bg-gradient-primary hover:opacity-90" asChild>
+                  <Link to="/signup">{t('hero.getStarted')}</Link>
                 </Button>
               </div>
             </nav>
