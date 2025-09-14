@@ -18,12 +18,20 @@ const Index = () => {
     <Suspense fallback={<LoadingSpinner />}>
       <div className="min-h-screen bg-background">
         <Header />
-        <Hero />
-        <Features />
-        <PatientJourney />
-        <Statistics />
-        <CallToAction />
-        <Footer />
+        <section id="home">
+          <Hero />
+        </section>
+        <section id="about">
+          <Features />
+        </section>
+        <section id="services">
+          <PatientJourney />
+          <Statistics />
+        </section>
+        <section id="contact">
+          <CallToAction />
+          <Footer />
+        </section>
       </div>
     </Suspense>
   );
